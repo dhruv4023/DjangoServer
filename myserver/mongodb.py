@@ -1,6 +1,8 @@
 from pymongo import MongoClient
 
-client = MongoClient("mongodb://localhost:27017")
+from django.conf import settings
+
+client = MongoClient(settings.DB_URL)
 db = client["pymongotest"]
 project_collection = db["projects"]
 contact_collection = db["contacts"]

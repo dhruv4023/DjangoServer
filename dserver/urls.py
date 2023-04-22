@@ -1,12 +1,10 @@
 
+from django.conf import settings
 from django.contrib import admin
-from django.urls import path
-from myserver.controller import *
+from django.urls import path, include
+from myserver.controller import index
 urlpatterns = [
     path('', index, name="home"),
-    path('project/addproject/', addProject, name="addproject"),
-    path('project/getproject/', getProject, name="getproject"),
-    path('project/delproject/<str:id>/', delProject, name="delProject"),
-    path('project/editproject/<str:id>/', editProject, name="editProject"),
+    path(settings.SERVER_URL+'project/', include('myserver.projectUrls')),
     path('admin/', admin.site.urls),
 ]
