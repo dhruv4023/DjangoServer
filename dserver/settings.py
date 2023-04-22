@@ -26,8 +26,9 @@ SECRET_KEY = 'django-insecure-)^3s@x65n(y-mw96t&z4=bhgflhlts-tg^p(bnxmftpn!*6@r2
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["localhost", '127.0.0.1','abzxy50312.pythonanywhere.com']
-CORS_ORIGIN_WHITELIST = ['http://localhost:3000', "http://127.0.0.1:8000","http://abzxy50312.pythonanywhere.com","https://dhruv4023.vercel.app"]
+ALLOWED_HOSTS = ["localhost", "127.0.0.1", "abzxy50312.pythonanywhere.com",".vercel.app"]
+CORS_ORIGIN_WHITELIST = ["http://localhost:3000", "http://127.0.0.1:8000",
+                         "http://abzxy50312.pythonanywhere.com", "https://dhruv4023.vercel.app"]
 
 # Application definition
 
@@ -139,3 +140,6 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+STATICFILES_DIRS = os.path.join(BASE_DIR, 'static')
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build', 'static')
