@@ -26,8 +26,8 @@ SECRET_KEY = 'django-insecure-)^3s@x65n(y-mw96t&z4=bhgflhlts-tg^p(bnxmftpn!*6@r2
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["localhost", '127.0.0.1']
-CORS_ORIGIN_WHITELIST = ['http://localhost:3000', "http://127.0.0.1:8000"]
+ALLOWED_HOSTS = ["localhost", '127.0.0.1','abzxy50312.pythonanywhere.com']
+CORS_ORIGIN_WHITELIST = ['http://localhost:3000', "http://127.0.0.1:8000","http://abzxy50312.pythonanywhere.com","https://dhruv4023.vercel.app"]
 
 # Application definition
 
@@ -37,14 +37,14 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    'corsheaders',
+    # 'corsheaders',
     'django.contrib.staticfiles',
     'myserver',
 ]
 
 
 MIDDLEWARE = [
-    'corsheaders.middleware.CorsMiddleware',
+    # 'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
