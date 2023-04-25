@@ -147,7 +147,8 @@ ALLOWED_HOSTS = [
     "localhost",
     "127.0.0.1",
     "abzxy50312.pythonanywhere.com",
-    ".vercel.app"
+    ".vercel.app",
+    "mysite4023.vercel.app"
 ]
 CORS_ORIGIN_WHITELIST = [
     "http://localhost:3000",
