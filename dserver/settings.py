@@ -147,8 +147,7 @@ ALLOWED_HOSTS = [
     "localhost",
     "127.0.0.1",
     "abzxy50312.pythonanywhere.com",
-    "django-server-mysite.vercel.app"
-    "mysite4023.vercel.app"
+    ".vercel.app"
 ]
 CORS_ORIGIN_WHITELIST = [
     "http://localhost:3000",
