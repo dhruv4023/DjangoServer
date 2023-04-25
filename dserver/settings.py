@@ -143,16 +143,20 @@ STATICFILES_DIR = os.path.join(BASE_DIR, 'static')
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build', 'static')
 
 
-ALLOWED_HOSTS = ["localhost", "127.0.0.1",
-                 "abzxy50312.pythonanywhere.com"]
+ALLOWED_HOSTS = [
+    "localhost",
+    "127.0.0.1",
+    "abzxy50312.pythonanywhere.com",
+    "django-server-mysite.vercel.app"
+    "mysite4023.vercel.app"
+]
 CORS_ORIGIN_WHITELIST = [
     "http://localhost:3000",
     "http://127.0.0.1:8000",
     "http://abzxy50312.pythonanywhere.com",
-    
+
     "https://mysite4023.vercel.app",
     "https://dhruv4023.vercel.app",
-    "https://django-server-mysite.vercel.app"
 ]
 
 
