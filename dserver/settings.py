@@ -145,7 +145,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build', 'static')
 
 ALLOWED_HOSTS = ["localhost", "127.0.0.1",
                  "abzxy50312.pythonanywhere.com", ".vercel.app"]
-CORS_ORIGIN_WHITELIST = ["http://localhost:3000", "http://127.0.0.1:8000",
+CORS_ORIGIN_WHITELIST = ["http://localhost:3000", "http://127.0.0.1:8000","https://mysite4023.vercel.app",
                          "http://abzxy50312.pythonanywhere.com", "https://dhruv4023.vercel.app"]
 
 
