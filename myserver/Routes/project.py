@@ -1,6 +1,6 @@
 
 from django.urls import path
-from myserver.controller import *
+from myserver.controller.project import *
 urlpatterns = [
     path('addproject/', addProject, name="addproject"),
     path('getproject/', getProject, name="getproject"),

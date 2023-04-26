@@ -2,9 +2,10 @@
 from django.conf import settings
 from django.contrib import admin
 from django.urls import path, include
-from myserver.controller import index
+from myserver.home import index
 urlpatterns = [
     path('', index, name="home"),
-    path('project/', include('myserver.projectUrls')),
+    path('project/', include('myserver.Routes.project')),
+    path('contact/', include('myserver.Routes.contact')),
     path('admin/', admin.site.urls),
 ]

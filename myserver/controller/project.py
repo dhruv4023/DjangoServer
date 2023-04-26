@@ -7,10 +7,6 @@ from django.views.decorators.csrf import csrf_exempt
 from django.shortcuts import *
 
 
-def index(request):
-    return render(request, 'index.html')
-    # return HttpResponse("Server is running")
-
 
 @csrf_exempt
 def getProject(request):

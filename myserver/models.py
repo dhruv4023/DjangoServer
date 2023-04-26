@@ -32,11 +32,10 @@ class ContactFormData:
         self.name = name
         self.email = email
         self.msg = msg
-        messagedOn = datetime.now()
+        self.messagedOn = datetime.now()
 
     def __str__(self):
         return self.name
-
 
 # from django.db import models
 
