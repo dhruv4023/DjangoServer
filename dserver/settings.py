@@ -36,14 +36,14 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    # 'corsheaders',
+    'corsheaders',
     'django.contrib.staticfiles',
     'myserver',
 ]
 
 
 MIDDLEWARE = [
-    # 'corsheaders.middleware.CorsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -148,13 +148,13 @@ ALLOWED_HOSTS = [
     "127.0.0.1",
     "abzxy50312.pythonanywhere.com",
     ".vercel.app",
+    "localhost:3000",
     "mysite4023.vercel.app"
 ]
 CORS_ORIGIN_WHITELIST = [
     "http://localhost:3000",
     "http://127.0.0.1:8000",
     "http://abzxy50312.pythonanywhere.com",
-
     "https://mysite4023.vercel.app",
     "https://dhruv4023.vercel.app",
 ]

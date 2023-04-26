@@ -12,6 +12,7 @@ def index(request):
     # return HttpResponse("Server is running")
 
 
+@csrf_exempt
 def getProject(request):
     cursor = project_collection.find()
     documents = list(cursor)
