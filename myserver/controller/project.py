@@ -7,7 +7,6 @@ from django.views.decorators.csrf import csrf_exempt
 from django.shortcuts import *
 
 
-
 @csrf_exempt
 def getProject(request):
     cursor = project_collection.find()
@@ -27,10 +26,9 @@ def addProject(request):
                 "description": data.get('description'),
             }
             project_collection.insert_one(doc)
-            return HttpResponse("JSON data Saved")
-            # return HttpResponse(json.dumps(np), content_type='application/json')
+            return HttpResponse(json.dumps({"msg": "JSON data Saved"}), content_type='application/json')
         except json.JSONDecodeError:
-            return HttpResponseBadRequest("Invalid JSON data")
+            return HttpResponse(json.dumps({"msg": "Invalid JSON data"}), content_type='application/json')
     else:
         return HttpResponse("Server Error")
 
