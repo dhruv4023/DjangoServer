@@ -18,12 +18,14 @@ def sentOtp(request):
             # print(MAIL_OTP)
             # send_mail("TestMail", "Test Mail q", EMAIL_HOST_USER,
             #           [to_mail], fail_silently=True)
-            return HttpResponse(json.dumps({"msg": "mail sent "+otp}), content_type='application/json')
+            return HttpResponse(json.dumps({"msg": "mail sent "+otp, "statusCode": True}), content_type='application/json')
         except json.JSONDecodeError:
-            return HttpResponse(json.dumps({"msg": "Invalid JSON data"}), content_type='application/json')
+            return HttpResponse(json.dumps({"msg": "Invalid JSON data", "statusCode": False}), content_type='application/json')
+        except:
+            return HttpResponse(json.dumps({"msg": "Server Error", "statusCode": False}), content_type='application/json')
 
     else:
-        return HttpResponse("Server Error")
+        return HttpResponse(json.dumps({"msg": "Server Error", "statusCode": False}), content_type='application/json')
 
 
 @csrf_exempt
@@ -35,12 +37,12 @@ def verifyOtp(request):
             email = body.get('email')
             otp = body.get('otp')
             if MAIL_OTP[email] == otp:
-                add_chat_to(name, email)
+                id=add_chat_to(name, email)
                 MAIL_OTP.pop(email)
-                return HttpResponse(json.dumps({"msg": "Verified", "chat": True}), content_type='application/json')
+                return HttpResponse(json.dumps({"msg": "Verified", "id": id}), content_type='application/json')
             else:
                 MAIL_OTP.pop(email)
-                return HttpResponse(json.dumps({"msg": "Wrong OTP", "chat": False}), content_type='application/json')
+                return HttpResponse(json.dumps({"msg": "Wrong OTP"}), content_type='application/json')
         except json.JSONDecodeError:
             return HttpResponse(json.dumps({"msg": "Invalid JSON data"}), content_type='application/json')
         except:

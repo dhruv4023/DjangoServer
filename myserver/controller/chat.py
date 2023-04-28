@@ -53,14 +53,17 @@ def delChat(request, id):
 
 
 def add_chat_to(name, email):
-    if chat_collection.find_one({"email": email}) is None:
+    data = chat_collection.find_one({"email": email})
+    if data is None:
+        id=str(int(round(time.time() * 10)))
         doc = {
-            "_id": str(int(round(time.time() * 10))),
+            "_id": id,
             "name": name,
             "email": email,
             "msgs": [],
             "createdOn": str(datetime.today())
         }
         chat_collection.insert_one(doc)
+        return id
     else:
-        pass
+        return data.get("_id")
