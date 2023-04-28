@@ -16,8 +16,9 @@ def sentOtp(request):
             otp = str(random.randint(100000, 999999))
             MAIL_OTP[to_mail] = otp
             # print(MAIL_OTP)
-            send_mail("TestMail", "Test Mail q", EMAIL_HOST_USER,[to_mail], fail_silently=True)
-            return HttpResponse(json.dumps({"msg": "mail sent "+otp, "statusCode": True}), content_type='application/json')
+            send_mail("TestMail", "Your OTP is "+otp,
+                      EMAIL_HOST_USER, [to_mail], fail_silently=True)
+            return HttpResponse(json.dumps({"msg": "mail sent", "statusCode": True}), content_type='application/json')
         except json.JSONDecodeError:
             return HttpResponse(json.dumps({"msg": "Invalid JSON data", "statusCode": False}), content_type='application/json')
         except:
