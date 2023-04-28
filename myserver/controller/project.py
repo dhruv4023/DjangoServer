@@ -5,7 +5,7 @@ from bson.objectid import *
 from myserver.mongodb import *
 from django.views.decorators.csrf import csrf_exempt
 from django.shortcuts import *
-
+from datetime import datetime
 
 @csrf_exempt
 def getProject(request):
@@ -24,6 +24,7 @@ def addProject(request):
                 "title": data.get('title'),
                 "link": data.get('link'),
                 "description": data.get('description'),
+                "postedOn": str(datetime.today())
             }
             project_collection.insert_one(doc)
             return HttpResponse(json.dumps({"msg": "JSON data Saved"}), content_type='application/json')

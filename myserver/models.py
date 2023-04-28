@@ -5,14 +5,14 @@ class Project:
         self.title = title
         self.link = link
         self.description = description
-        self.postedOn = datetime.now()
+        self.postedOn = str(datetime.today())
 
 
 class ChatData:
     def __init__(self, name, email):
         self.name = name
         self.email = email
-        self.chat_mess_on = datetime.now()
+        self.chat_mess_on = str(datetime.today())
         self.messages = []
 
     def __str__(self):
@@ -23,7 +23,7 @@ class MessageList:
     def __init__(self, side, message):
         self.side = side
         self.message = message
-        self.messaged_on = datetime.now()
+        self.messaged_on = str(datetime.today())
 
 
 # contactForm data
@@ -32,7 +32,7 @@ class ContactFormData:
         self.name = name
         self.email = email
         self.msg = msg
-        self.messagedOn = datetime.now()
+        self.messagedOn = str(datetime.today())
 
     def __str__(self):
         return self.name

@@ -1,5 +1,6 @@
 import json
 import time
+from datetime import datetime
 from django.http import *
 from bson.objectid import *
 from myserver.mongodb import *
@@ -24,6 +25,7 @@ def getContact(request):
 #                 "name": data.get('name'),
 #                 "email": data.get('email'),
 #                 "msg": data.get('msg'),
+#                 "messagedOn": str(datetime.today())
 #             }
 #             contact_collection.insert_one(doc)
 #             return HttpResponse(json.dumps({"msg": "JSON data Saved"}), content_type='application/json')

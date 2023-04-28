@@ -1,9 +1,8 @@
 
 from django.urls import path
-from myserver.controller.contact import *
+from myserver.controller.chat import *
 urlpatterns = [
-    # path('addcontact/', addContact, name="addcontact"),
-    # path('getcontact/', getContact, name="getcontact"),
-    # path('delcontact/<str:id>/', delContact, name="delcontact"),
+    path('getChatData/<str:id>', getChatData, name="getChatData"),
+    path('addNewMsg/<str:id>', addNewMsg, name="addNewMsg"),
+    path('delChat/<str:id>/', delChat, name="delChat"),
 ]
-

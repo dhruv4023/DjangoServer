@@ -4,7 +4,7 @@ from django.views.decorators.csrf import csrf_exempt
 from django.core.mail import send_mail
 from dserver.settings import EMAIL_HOST_USER
 import random
-
+from myserver.controller.chat import add_chat_to
 MAIL_OTP = {}
 
 
@@ -16,7 +16,8 @@ def sentOtp(request):
             otp = str(random.randint(100000, 999999))
             MAIL_OTP[to_mail] = otp
             # print(MAIL_OTP)
-            send_mail("TestMail","Test Mail q",EMAIL_HOST_USER,[to_mail],fail_silently=True)
+            # send_mail("TestMail", "Test Mail q", EMAIL_HOST_USER,
+            #           [to_mail], fail_silently=True)
             return HttpResponse(json.dumps({"msg": "mail sent "+otp}), content_type='application/json')
         except json.JSONDecodeError:
             return HttpResponse(json.dumps({"msg": "Invalid JSON data"}), content_type='application/json')
@@ -30,9 +31,11 @@ def verifyOtp(request):
     if request.method == 'POST':
         try:
             body = json.loads(request.body)
+            name = body.get('name')
             email = body.get('email')
             otp = body.get('otp')
             if MAIL_OTP[email] == otp:
+                add_chat_to(name, email)
                 MAIL_OTP.pop(email)
                 return HttpResponse(json.dumps({"msg": "Verified", "chat": True}), content_type='application/json')
             else:
