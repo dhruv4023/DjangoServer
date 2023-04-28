@@ -156,6 +156,8 @@ CORS_ORIGIN_WHITELIST = [
     "http://localhost:3000",
     "http://127.0.0.1:8000",
     "http://abzxy50312.pythonanywhere.com",
+    "https://mysite4023.vercel.app",
+    "https://dhruv4023.vercel.app"
 ]
 
 load_dotenv()  # load environment variables from .env file
