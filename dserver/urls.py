@@ -7,5 +7,7 @@ urlpatterns = [
     path('', index, name="home"),
     path('project/', include('myserver.Routes.project')),
     path('contact/', include('myserver.Routes.contact')),
+    path('chat/', include('myserver.Routes.chat')),
+    path('mail/', include('myserver.Mail.routes')),
     path('admin/', admin.site.urls),
 ]
