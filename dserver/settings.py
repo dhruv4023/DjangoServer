@@ -147,7 +147,6 @@ ALLOWED_HOSTS = [
     "localhost",
     "127.0.0.1",
     "abzxy50312.pythonanywhere.com",
-    ".vercel.app",
     "localhost:3000",
     "mysite4023.vercel.app"
 ]
