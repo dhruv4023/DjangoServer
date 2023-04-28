@@ -16,8 +16,7 @@ def sentOtp(request):
             otp = str(random.randint(100000, 999999))
             MAIL_OTP[to_mail] = otp
             # print(MAIL_OTP)
-            # send_mail("TestMail", "Test Mail q", EMAIL_HOST_USER,
-            #           [to_mail], fail_silently=True)
+            send_mail("TestMail", "Test Mail q", EMAIL_HOST_USER,[to_mail], fail_silently=True)
             return HttpResponse(json.dumps({"msg": "mail sent "+otp, "statusCode": True}), content_type='application/json')
         except json.JSONDecodeError:
             return HttpResponse(json.dumps({"msg": "Invalid JSON data", "statusCode": False}), content_type='application/json')
@@ -37,7 +36,7 @@ def verifyOtp(request):
             email = body.get('email')
             otp = body.get('otp')
             if MAIL_OTP[email] == otp:
-                id=add_chat_to(name, email)
+                id = add_chat_to(name, email)
                 MAIL_OTP.pop(email)
                 return HttpResponse(json.dumps({"msg": "Verified", "id": id}), content_type='application/json')
             else:

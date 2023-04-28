@@ -18,6 +18,16 @@ def getChatData(request, id):
 
 
 @csrf_exempt
+def chatLserList(request):
+    try:
+        cursor = chat_collection.find({}, {"_id": 1, "name": 1})
+        documents = list(cursor)
+        return HttpResponse(json.dumps(documents), content_type='application/json')
+    except:
+        return HttpResponseServerError(json.dumps({"msg": "Server Error"}), content_type='application/json')
+
+
+@csrf_exempt
 def addNewMsg(request, id):
     if request.method == 'POST':
         try:
@@ -55,7 +65,7 @@ def delChat(request, id):
 def add_chat_to(name, email):
     data = chat_collection.find_one({"email": email})
     if data is None:
-        id=str(int(round(time.time() * 10)))
+        id = str(int(round(time.time() * 10)))
         doc = {
             "_id": id,
             "name": name,
