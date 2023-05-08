@@ -1,0 +1,60 @@
+[
+  {
+    "_id": "pocket",
+    "debit": 200,
+    "credit": 400,
+    "allEntries": [
+      {
+        "month": "2023-01",
+        "monthlydebit": 200,
+        "monthlycredit": 400,
+        "entries": [
+          {
+            "date": "2023-01-01",
+            "dailydebit": 400,
+            "dailyCredit": 800,
+            "entries": [
+              { "comment": "comment1", "value": -20 },
+              { "comment": "comment2", "value": 40 }
+            ]
+          },
+          {
+            "date": "2023-01-02",
+            "dailydebit": 500,
+            "dailyCredit": 300,
+            "entries": [
+              { "comment": "comment1", "value": -20 },
+              { "comment": "comment2", "value": 40 }
+            ]
+          }
+        ]
+      },
+      {
+        "month": "2023-02",
+        "monthlydebit": 200,
+        "monthlycredit": 400,
+        "entries": [
+          {
+            "date": "2023-02-01",
+            "dailydebit": 400,
+            "dailyCredit": 800,
+            "entries": [
+              { "comment": "comment1", "value": -20 },
+              { "comment": "comment2", "value": 40 }
+            ]
+          },
+          {
+            "date": "2023-02-02",
+            "dailydebit": 500,
+            "dailyCredit": 300,
+            "entries": [
+              { "comment": "comment1", "value": -20 },
+              { "comment": "comment2", "value": 40 }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]
+

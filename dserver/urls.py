@@ -10,5 +10,6 @@ urlpatterns = [
     path('contact/', include('myserver.Routes.contact')),
     path('chat/', include('myserver.Routes.chat')),
     path('mail/', include('myserver.Mail.routes')),
+    # path('expense/', include('myserver.Routes.expense')),
     path('admin/', admin.site.urls),
 ]
