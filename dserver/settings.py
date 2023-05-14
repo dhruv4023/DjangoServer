@@ -74,6 +74,7 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'dserver.wsgi.application'
+ASGI_APPLICATION = 'dserver.asgi.application'
 
 
 # Database
