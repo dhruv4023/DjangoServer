@@ -16,7 +16,7 @@ def sentOtp(request):
             otp = str(random.randint(100000, 999999))
             MAIL_OTP[to_mail] = otp
             # print(MAIL_OTP)
-            send_mail("TestMail", "Your OTP is "+otp,
+            send_mail("OTP FOR dhruv4023.vercel.app", "Your OTP is "+otp+"\nThank you for visiting dhruv4023.vercel.app \nhave a nice day !",
                       EMAIL_HOST_USER, [to_mail], fail_silently=True)
             return HttpResponse(json.dumps({"msg": "mail sent", "statusCode": True}), content_type='application/json')
         except json.JSONDecodeError:

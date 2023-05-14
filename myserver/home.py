@@ -7,8 +7,8 @@ from django.conf import settings
 
 
 def index(request):
-    return render(request, 'index.html')
-    # return HttpResponse("Server is running")
+    # return render(request, 'index.html')
+    return HttpResponse("Server is running")
 
 
 @csrf_exempt
