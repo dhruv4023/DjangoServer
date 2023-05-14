@@ -74,7 +74,6 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'dserver.wsgi.application'
-ASGI_APPLICATION = 'dserver.asgi.application'
 
 
 # Database
@@ -165,7 +164,7 @@ CORS_ORIGIN_WHITELIST = [
 
 load_dotenv()  # load environment variables from .env file
 DB_URL = os.getenv('DB_URL')
-SERVER_URL = os.getenv('SERVER_URL')
+# SERVER_URL = os.getenv('SERVER_URL')
 
 # email settings
 
