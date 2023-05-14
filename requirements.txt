@@ -1,5 +1,5 @@
-pymongo==4.3.3
-django==4.1.7
-bson==0.5.10
-python-dotenv==1.0.0
-django-cors-headers==3.14.0
+pymongo
+django
+bson
+python-dotenv
+django-cors-headers
